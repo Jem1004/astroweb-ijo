@@ -17,7 +17,7 @@ export default function Header() {
           <a href="/" className="inline-block">
             <Image
               src="https://nore.co.id/wp-content/uploads/2024/09/nore_1000px-1-1-e1729234875986.png"
-              alt="Nore Innovation"
+              alt="Astro Digital Solution"
               width={111}
               height={64}
               className="h-16 w-auto"
@@ -93,7 +93,7 @@ export default function Header() {
 
           {/* Contact Button */}
           <a
-            href="https://api.whatsapp.com/send/?phone=628551170021&text&type=phone_number&app_absent=0"
+            href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20get%20in%20touch&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-1.5 border-2 border-green-400 text-green-400 font-semibold rounded-full hover:bg-green-50 transition-all duration-300"
@@ -162,7 +162,7 @@ export default function Header() {
           {/* Mobile Contact Button */}
           <div className="pt-2">
             <a
-              href="https://api.whatsapp.com/send/?phone=628551170021&text&type=phone_number&app_absent=0"
+              href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20get%20in%20touch&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full px-8 py-1.5 border-2 border-green-400 text-green-400 font-semibold rounded-full hover:bg-green-50 transition-all duration-300"

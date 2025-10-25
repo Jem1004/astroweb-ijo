@@ -46,7 +46,7 @@ export default function Footer() {
                 cursor: 'pointer'
               }}
             >
-              PT Sriwijaya Muda Berkarya
+              Astro Digital Solution
             </a>
             <div style={{
               display: 'block',
@@ -736,7 +736,7 @@ export default function Footer() {
               lineHeight: '21px',
               textAlign: 'center',
               color: 'rgb(255, 255, 255)'
-            }}>PT Sriwijaya Muda Berkarya</strong> <span style={{ color: 'rgb(255, 255, 255)' }}>Semua Hak Dilindungi</span>
+            }}>Astro Digital Solution</strong> <span style={{ color: 'rgb(255, 255, 255)' }}>Semua Hak Dilindungi</span>
           </p>
           <div style={{
             display: 'block',

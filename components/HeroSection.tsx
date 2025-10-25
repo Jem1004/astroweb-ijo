@@ -22,7 +22,7 @@ export default function HeroSection() {
               color: 'rgb(95, 198, 124)'
             }}
           >
-            Nore Innovation
+            Astro Digital Solution
           </h2>
 
           {/* Main Heading */}
@@ -59,7 +59,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             {/* Schedule a Call Button - Filled */}
             <a
-              href="https://api.whatsapp.com/send/?phone=628551170021&text=Hello%20Nore%20Inovasi,%20I%E2%80%99d%20like%20to%20schedule%20a%20chat%20about%20app%20development.%20Let%20me%20know%20your%20availability."
+              href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%E2%80%99d%20like%20to%20schedule%20a%20chat%20about%20app%20development.%20Let%20me%20know%20your%20availability."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-full transition-all duration-300"

@@ -17,7 +17,7 @@ export default function Home() {
       <InfoSection />
       <ServicesInfo />
       <AboutUs />
-      <OurService />
+      {/* <OurService /> */}
       <OurBrands />
       <ClientSection />
       <BusinessEscalation />
@@ -25,3 +25,4 @@ export default function Home() {
     </div>
   );
 }
+
