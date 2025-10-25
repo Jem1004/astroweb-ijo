@@ -60,7 +60,7 @@ export default function Footer() {
                 lineHeight: '21px',
                 color: 'rgb(255, 255, 255)'
               }}>
-                Jl. Palembang - Jambi, KM. 75, Kec. Betung
+                Jl. Provinsi Km.47, Babulu Darat
               </p>
               <p style={{
                 display: 'block',
@@ -70,7 +70,7 @@ export default function Footer() {
                 lineHeight: '21px',
                 color: 'rgb(255, 255, 255)'
               }}>
-                Banyuasin, Sumatera Selatan (30958)
+                Babulu, Penajam Paser Utara (76284)
               </p>
               <p style={{
                 display: 'block',
@@ -80,7 +80,7 @@ export default function Footer() {
                 lineHeight: '21px',
                 color: 'rgb(255, 255, 255)'
               }}>
-                <strong style={{ color: 'rgb(255, 255, 255)' }}>Telepon:</strong> <span style={{ color: 'rgb(255, 255, 255)' }}> +62 8516 295 1515</span>
+                <strong style={{ color: 'rgb(255, 255, 255)' }}>Telepon:</strong> <span style={{ color: 'rgb(255, 255, 255)' }}> +62 8215 8736 885</span>
               </p>
               <p style={{
                 display: 'block',
@@ -90,7 +90,7 @@ export default function Footer() {
                 lineHeight: '21px',
                 color: 'rgb(255, 255, 255)'
               }}>
-                <strong style={{ color: 'rgb(255, 255, 255)' }}>Email:</strong> <span style={{ color: 'rgb(255, 255, 255)' }}> admin@astrodigital.id</span>
+                <strong style={{ color: 'rgb(255, 255, 255)' }}>Email:</strong> <span style={{ color: 'rgb(255, 255, 255)' }}> info@astrods.id</span>
               </p>
             </div>
           </div>

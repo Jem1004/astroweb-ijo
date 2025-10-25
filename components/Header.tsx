@@ -16,7 +16,7 @@ export default function Header() {
         <div className="flex items-center">
           <a href="/" className="inline-block">
             <Image
-              src="https://nore.co.id/wp-content/uploads/2024/09/nore_1000px-1-1-e1729234875986.png"
+              src="/ASTRO.png"
               alt="Astro Digital Solution"
               width={111}
               height={64}
@@ -29,7 +29,7 @@ export default function Header() {
         <nav className="hidden lg:flex items-center justify-center flex-1">
           <div className="flex space-x-1">
             <a
-              href="https://nore.co.id/about-us/"
+              href="/about"
               className="text-green-400 font-semibold text-sm px-6 py-4 hover:text-green-300 transition-colors duration-400 capitalize relative group"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
@@ -40,7 +40,7 @@ export default function Header() {
               ></span>
             </a>
             <a
-              href="https://nore.co.id/our-service/"
+              href="/services"
               className="text-green-400 font-semibold text-sm px-6 py-4 hover:text-green-300 transition-colors duration-400 capitalize relative group"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
@@ -51,7 +51,7 @@ export default function Header() {
               ></span>
             </a>
             <a
-              href="https://nore.co.id/portofolio/"
+              href="/portfolio"
               className="text-green-400 font-semibold text-sm px-6 py-4 hover:text-green-300 transition-colors duration-400 capitalize relative group"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
@@ -62,11 +62,11 @@ export default function Header() {
               ></span>
             </a>
             <a
-              href="https://nore.co.id/news/"
+              href="/contact"
               className="text-green-400 font-semibold text-sm px-6 py-4 hover:text-green-300 transition-colors duration-400 capitalize relative group"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
-              News
+              Hubungi Kami
               <span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-green-400 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300"
                 style={{ opacity: 0 }}
@@ -93,7 +93,7 @@ export default function Header() {
 
           {/* Contact Button */}
           <a
-            href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20get%20in%20touch&type=phone_number&app_absent=0"
+            href="https://api.whatsapp.com/send/?phone=6282158736885&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20get%20in%20touch&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-1.5 border-2 border-green-400 text-green-400 font-semibold rounded-full hover:bg-green-50 transition-all duration-300"
@@ -131,38 +131,38 @@ export default function Header() {
       <div className={`lg:hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96' : 'max-h-0 overflow-hidden'}`} style={{ backgroundColor: 'rgb(255, 255, 255)' }}>
         <div className="px-8 py-6 space-y-4">
           <a
-            href="https://nore.co.id/about-us/"
+            href="/about"
             className="block text-gray-700 font-semibold text-sm py-2.5 px-5 hover:bg-gray-100 transition-colors capitalize"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
 Tentang Kami
           </a>
           <a
-            href="https://nore.co.id/our-service/"
+            href="/services"
             className="block text-gray-700 font-semibold text-sm py-2.5 px-5 hover:bg-gray-100 transition-colors capitalize"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
 Layanan
           </a>
           <a
-            href="https://nore.co.id/portofolio/"
+            href="/portfolio"
             className="block text-gray-700 font-semibold text-sm py-2.5 px-5 hover:bg-gray-100 transition-colors capitalize"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
             Portofolio
           </a>
           <a
-            href="https://nore.co.id/news/"
+            href="/contact"
             className="block text-gray-700 font-semibold text-sm py-2.5 px-5 hover:bg-gray-100 transition-colors capitalize"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
-            News
+            Hubungi Kami
           </a>
 
           {/* Mobile Contact Button */}
           <div className="pt-2">
             <a
-              href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20get%20in%20touch&type=phone_number&app_absent=0"
+              href="https://api.whatsapp.com/send/?phone=6282158736885&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20get%20in%20touch&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full px-8 py-1.5 border-2 border-green-400 text-green-400 font-semibold rounded-full hover:bg-green-50 transition-all duration-300"

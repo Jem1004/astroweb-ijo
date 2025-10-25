@@ -118,7 +118,7 @@ export default function OurService() {
         {/* See More Button */}
         <div style={{ textAlign: 'center' }}>
           <a
-            href="https://nore.co.id/our-service/"
+            href="/services"
             target="_blank"
             rel="noopener noreferrer"
             style={{

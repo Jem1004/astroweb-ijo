@@ -5,13 +5,13 @@ export default function HeroSection() {
     <section
       className="relative min-h-screen flex items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8 pt-24"
       style={{
-        backgroundImage: 'url("https://nore.co.id/wp-content/uploads/2024/09/Rectangle-45.png")'
+        backgroundImage: 'url("/Rectangle-45.png")'
       }}
     >
       <div className="max-w-7xl mx-auto w-full h-full flex flex-col justify-end pb-8">
         {/* Content Section */}
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          {/* Nore Innovation Heading */}
+          {/* Astro Digital Solution Heading */}
           <h2
             style={{
               fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -59,7 +59,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             {/* Schedule a Call Button - Filled */}
             <a
-              href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%E2%80%99d%20like%20to%20schedule%20a%20chat%20about%20app%20development.%20Let%20me%20know%20your%20availability."
+              href="https://api.whatsapp.com/send/?phone=6282158736885&text=Hello%20Astro%20Digital%20Solution,%20I%E2%80%99d%20like%20to%20schedule%20a%20chat%20about%20app%20development.%20Let%20me%20know%20your%20availability."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-full transition-all duration-300"

@@ -105,7 +105,7 @@ export default function ServicesInfo() {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <a
-            href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%E2%80%99d%20like%20to%20discuss%20your%20services."
+            href="https://api.whatsapp.com/send/?phone=6282158736885&text=Hello%20Astro%20Digital%20Solution,%20I%E2%80%99d%20like%20to%20discuss%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-full transition-all duration-300"

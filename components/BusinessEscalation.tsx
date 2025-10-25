@@ -91,7 +91,7 @@ export default function BusinessEscalation() {
           width: '100%'
         }}>
           <a
-            href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20start%20my%20project&type=phone_number&app_absent=0"
+            href="https://api.whatsapp.com/send/?phone=6282158736885&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20start%20my%20project&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             style={{
