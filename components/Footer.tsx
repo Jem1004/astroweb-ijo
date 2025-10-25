@@ -95,7 +95,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Useful Links Section */}
+          {/* Tautan Berguna Section */}
           <div style={{
             display: 'block',
             width: '220px',
@@ -273,7 +273,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Our Services Section */}
+          {/* Solusi Layanan Kami Section */}
           <div style={{
             display: 'block',
             width: '220px',
@@ -451,7 +451,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Follow Us Section */}
+          {/* Ikuti Kami Section */}
           <div style={{
             display: 'block',
             width: '440px',

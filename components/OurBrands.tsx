@@ -45,7 +45,7 @@ export default function OurBrands() {
               margin: 0
             }}
           >
-            Our Brands
+            Merek Kami
           </h2>
         </div>
 

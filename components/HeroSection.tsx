@@ -52,7 +52,7 @@ export default function HeroSection() {
               marginBottom: '14.4px'
             }}
           >
-            Digital transformation can be complex. We make it easier, safer and enjoyable.
+  Transformasi digital bisa rumit. Kami membuatnya lebih mudah, aman, dan menyenangkan.
           </p>
 
           {/* Buttons */}
@@ -78,7 +78,7 @@ export default function HeroSection() {
                 cursor: 'pointer'
               }}
             >
-              Schedule a Call
+  Jadwalkan Panggilan
             </a>
 
             {/* Get to Know Us Button - Outline */}
@@ -101,7 +101,7 @@ export default function HeroSection() {
                 cursor: 'pointer'
               }}
             >
-              Get to Know Us
+  Kenali Kami Lebih Dekat
             </a>
           </div>
 

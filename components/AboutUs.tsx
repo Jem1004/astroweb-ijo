@@ -18,7 +18,7 @@ export default function AboutUs() {
                 margin: 0
               }}
             >
-              About Us
+              Tentang Kami
             </h2>
           </div>
 
@@ -36,7 +36,7 @@ export default function AboutUs() {
                 margin: 0
               }}
             >
-              Nore Innovation is committed to provide the best solutions for information system, app, digital marketing, and all kinds of IT related matter. With flexible plan and price, Nore Innovation provides consultation service, digital marketing, system and mobile app development as well as system content management and maintenance. Our professional team is ready to be a part of your success.
+              Astro Digital Solution berkomitmen untuk menyediakan solusi terbaik untuk sistem informasi, aplikasi, pemasaran digital, dan semua hal terkait IT. Dengan rencana dan harga yang fleksibel, Astro Digital Solution menyediakan layanan konsultasi, pemasaran digital, pengembangan sistem dan aplikasi mobile serta manajemen konten dan pemeliharaan sistem. Tim profesional kami siap menjadi bagian dari kesuksesan Anda.
             </p>
           </div>
         </div>

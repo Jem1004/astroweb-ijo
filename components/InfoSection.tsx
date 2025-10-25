@@ -17,7 +17,7 @@ export default function InfoSection() {
               textAlign: 'left'
             }}
           >
-            What Makes Us Different
+            Yang Membuat Kami Berbeda
           </h2>
         </div>
 
@@ -69,7 +69,7 @@ export default function InfoSection() {
                   marginBottom: '14.4px'
                 }}
               >
-                Easy
+                Mudah
               </h3>
               <p
                 style={{
@@ -80,7 +80,7 @@ export default function InfoSection() {
                   margin: 0
                 }}
               >
-                We always care for our clients through easy to use solution. For us, usable and practical solution that speaks for itself is all that matters.
+                Kami selalu peduli pada klien melalui solusi yang mudah digunakan. Bagi kami, solusi yang dapat digunakan dan praktis yang berbicara sendiri adalah yang paling penting.
               </p>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function InfoSection() {
                   marginBottom: '14.4px'
                 }}
               >
-                Innovative
+                Inovatif
               </h3>
               <p
                 style={{
@@ -142,7 +142,7 @@ export default function InfoSection() {
                   margin: 0
                 }}
               >
-                We always believe problems are window to new opportunities. Consult your stories and we will provide you with innovative solution.
+                Kami selalu percaya bahwa masalah adalah jendela menuju peluang baru. Konsultasikan cerita Anda dan kami akan memberikan solusi inovatif.
               </p>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function InfoSection() {
                   marginBottom: '14.4px'
                 }}
               >
-                Affordable
+                Terjangkau
               </h3>
               <p
                 style={{
@@ -204,7 +204,7 @@ export default function InfoSection() {
                   margin: 0
                 }}
               >
-                We always dream for digital solution that could be reached by everyone. We always try to provide solution suitable to your budget.
+                Kami selalu bermimpi untuk solusi digital yang bisa dijangkau oleh semua orang. Kami selalu mencoba memberikan solusi yang sesuai dengan anggaran Anda.
               </p>
             </div>
           </div>

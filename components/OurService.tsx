@@ -3,18 +3,18 @@ import Image from 'next/image';
 export default function OurService() {
   const services = [
     {
-      title: "IT Consultation",
-      description: "Unlock your business's technological potential with our expert team. We offer strategic planning, technology assessment, customized solutions, vendor management and more.",
+      title: "Konsultasi IT",
+      description: "Buka potensi teknologi bisnis Anda dengan tim ahli kami. Kami menawarkan perencanaan strategis, penilaian teknologi, solusi kustom, manajemen vendor dan lainnya.",
       icon: "https://nore.co.id/wp-content/uploads/2024/09/landing-page-internal-7.png"
     },
     {
-      title: "Website Based Application",
-      description: "Discover power of our website-based applications. Tailored to your business needs, our solutions offer seamless user experience, scalability, efficiency, robust security, and more.",
+      title: "Aplikasi Berbasis Web",
+      description: "Temukan kekuatan aplikasi berbasis web kami. Disesuaikan dengan kebutuhan bisnis Anda, solusi kami menawarkan pengalaman pengguna yang mulus, skalabilitas, efisiensi, keamanan yang kuat, dan lainnya.",
       icon: "https://nore.co.id/wp-content/uploads/2024/09/landing-page-internal-6.png"
     },
     {
-      title: "Mobile Apps",
-      description: "Experience power and convenience of our user-friendly mobile apps. Simplify your life, stay connected, and enjoy entertainment on go. With personalized features and seamless performance.",
+      title: "Aplikasi Mobile",
+      description: "Rasakan kekuatan dan kemudahan aplikasi mobile yang ramah pengguna kami. Sederhanakan hidup Anda, tetap terhubung, dan nikmati hiburan di mana pun. Dengan fitur personalisasi dan performa yang mulus.",
       icon: "https://nore.co.id/wp-content/uploads/2024/09/landing-page-internal-5.png"
     }
   ];
@@ -36,7 +36,7 @@ export default function OurService() {
               margin: 0
             }}
           >
-            Our Services
+            Layanan Kami
           </h2>
         </div>
 
@@ -138,7 +138,7 @@ export default function OurService() {
               transition: 'all 0.3s ease'
             }}
           >
-            See More of Our Services
+            Lihat Lebih Banyak Layanan Kami
           </a>
         </div>
       </div>

@@ -3,33 +3,33 @@ import Image from 'next/image';
 export default function ServicesInfo() {
   const services = [
     {
-      title: "Development",
-      description: "We create custom websites and applications tailored to your business needs with cutting-edge technology.",
+      title: "Pengembangan",
+      description: "Kami membuat website dan aplikasi kustom yang disesuaikan dengan kebutuhan bisnis Anda menggunakan teknologi terkini.",
       icon: "🚀"
     },
     {
-      title: "Digital Marketing",
-      description: "Strategic marketing solutions that amplify your brand and drive meaningful engagement.",
+      title: "Pemasaran Digital",
+      description: "Solusi pemasaran strategis yang meningkatkan merek Anda dan mendorong keterlibatan yang bermakna.",
       icon: "📈"
     },
     {
-      title: "Consultation",
-      description: "Expert guidance to help navigate digital challenges and achieve your business goals.",
+      title: "Konsultasi",
+      description: "Bimbingan ahli untuk membantu mengatasi tantangan digital dan mencapai tujuan bisnis Anda.",
       icon: "💡"
     },
     {
-      title: "System Maintenance",
-      description: "Comprehensive maintenance and support to keep your systems running smoothly.",
+      title: "Pemeliharaan Sistem",
+      description: "Pemeliharaan dan dukungan komprehensif untuk menjaga sistem Anda berjalan lancar.",
       icon: "🔧"
     },
     {
-      title: "Content Management",
-      description: "Professional content strategy and management to enhance your digital presence.",
+      title: "Manajemen Konten",
+      description: "Strategi dan manajemen konten profesional untuk meningkatkan kehadiran digital Anda.",
       icon: "📝"
     },
     {
-      title: "Mobile Apps",
-      description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
+      title: "Aplikasi Mobile",
+      description: "Aplikasi mobile native dan cross-platform yang memberikan pengalaman pengguna yang luar biasa.",
       icon: "📱"
     }
   ];
@@ -51,7 +51,7 @@ export default function ServicesInfo() {
               marginBottom: '14.4px'
             }}
           >
-            Our Services
+            Layanan Kami
           </h2>
         </div>
 
@@ -124,7 +124,7 @@ export default function ServicesInfo() {
               cursor: 'pointer'
             }}
           >
-            Discuss Your Project
+            Diskusikan Proyek Anda
           </a>
         </div>
       </div>

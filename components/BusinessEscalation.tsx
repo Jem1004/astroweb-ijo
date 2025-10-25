@@ -63,7 +63,7 @@ export default function BusinessEscalation() {
               marginBottom: '14.4px'
             }}
           >
-            Escalate Your Business With Us!
+            Tingkatkan Bisnis Anda Bersama Kami!
           </h2>
 
           {/* Description */}
@@ -80,7 +80,7 @@ export default function BusinessEscalation() {
               maxWidth: '100%'
             }}
           >
-            Grow your personal brand and business with our comprehensive IT service. Website, system, Android &amp; iOS app development, digital marketing and beyond
+            Kembangkan merek pribadi dan bisnis Anda dengan layanan IT komprehensif kami. Pengembangan website, sistem, aplikasi Android &amp; iOS, pemasaran digital dan lainnya
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function BusinessEscalation() {
           width: '100%'
         }}>
           <a
-            href="https://api.whatsapp.com/send/?phone=628551170021&text&type=phone_number&app_absent=0"
+            href="https://api.whatsapp.com/send/?phone=6285162951515&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20start%20my%20project&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -112,7 +112,7 @@ export default function BusinessEscalation() {
               transition: 'all 0.3s ease'
             }}
           >
-            Start Now
+            Mulai Sekarang
           </a>
         </div>
       </div>

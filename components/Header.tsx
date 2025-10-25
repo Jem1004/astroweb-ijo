@@ -33,7 +33,7 @@ export default function Header() {
               className="text-green-400 font-semibold text-sm px-6 py-4 hover:text-green-300 transition-colors duration-400 capitalize relative group"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
-              About Us
+  Tentang Kami
               <span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-green-400 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300"
                 style={{ opacity: 0 }}
@@ -44,7 +44,7 @@ export default function Header() {
               className="text-green-400 font-semibold text-sm px-6 py-4 hover:text-green-300 transition-colors duration-400 capitalize relative group"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
-              Service
+  Layanan
               <span
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-green-400 transform scale-x-0 group-hover:scale-x-100 transition-all duration-300"
                 style={{ opacity: 0 }}
@@ -79,7 +79,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center space-x-4">
           {/* Language Selector */}
           <div className="flex items-center space-x-2">
-            <span className="text-green-100 text-sm font-semibold" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Language:</span>
+            <span className="text-green-100 text-sm font-semibold" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Bahasa:</span>
             <div className="flex space-x-2">
               <button className="text-green-400 font-bold text-sm hover:text-green-300 transition-colors">
                 EN
@@ -104,7 +104,7 @@ export default function Header() {
               borderRadius: '200px'
             }}
           >
-            Contact Us
+  Hubungi Kami
           </a>
         </div>
 
@@ -135,14 +135,14 @@ export default function Header() {
             className="block text-gray-700 font-semibold text-sm py-2.5 px-5 hover:bg-gray-100 transition-colors capitalize"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
-            About Us
+Tentang Kami
           </a>
           <a
             href="https://nore.co.id/our-service/"
             className="block text-gray-700 font-semibold text-sm py-2.5 px-5 hover:bg-gray-100 transition-colors capitalize"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
-            Service
+Layanan
           </a>
           <a
             href="https://nore.co.id/portofolio/"
@@ -173,7 +173,7 @@ export default function Header() {
                 borderRadius: '200px'
               }}
             >
-              Contact Us
+    Hubungi Kami
             </a>
           </div>
         </div>
