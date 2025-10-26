@@ -8,7 +8,6 @@ export default function AboutUs() {
           <div style={{ marginBottom: '14.4px' }}>
             <h2
               style={{
-                fontFamily: '"Plus Jakarta Sans", sans-serif',
                 fontSize: '28px',
                 fontWeight: '700',
                 lineHeight: '37.8px',
@@ -26,7 +25,6 @@ export default function AboutUs() {
           <div>
             <p
               style={{
-                fontFamily: '"Plus Jakarta Sans", sans-serif',
                 fontSize: '21px',
                 fontWeight: '600',
                 lineHeight: '30.45px',

@@ -207,12 +207,11 @@ export default function ServicesPage() {
                 {/* Icon and Title */}
                 <div style={{ marginBottom: '24px' }}>
                   <div style={{
-                    display: 'inline-block',
+                    display: 'flex',
                     width: '60px',
                     height: '60px',
                     backgroundColor: service.color,
                     borderRadius: '12px',
-                    display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontSize: '28px',

@@ -75,7 +75,6 @@ export default function ServicesInfo() {
               <h3
                 className="mb-3 text-center"
                 style={{
-                  fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '20px',
                   fontWeight: '700',
                   lineHeight: '28px',
@@ -90,7 +89,6 @@ export default function ServicesInfo() {
               <p
                 className="text-center leading-relaxed"
                 style={{
-                  fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '15px',
                   lineHeight: '22px',
                   color: 'rgb(229, 242, 239)'

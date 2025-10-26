@@ -3,19 +3,24 @@
 import { useState } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ContactFormData, ContactFormState, FormErrors } from '@/types';
+import { validateContactForm, sanitizeInput, hasFormErrors, getFieldError, formatIndonesianPhone } from '@/utils/validation';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    message: ''
+  const [formState, setFormState] = useState<ContactFormState>({
+    formData: {
+      name: '',
+      email: '',
+      company: '',
+      phone: '',
+      message: ''
+    },
+    isSubmitting: false,
+    submitMessage: '',
+    submitStatus: 'idle'
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const services = [
     'Pilih Layanan',
@@ -29,30 +34,106 @@ export default function ContactPage() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+
+    // Sanitize input
+    const sanitizedValue = sanitizeInput(value);
+
+    setFormState(prev => ({
       ...prev,
-      [name]: value
+      formData: {
+        ...prev.formData,
+        [name]: sanitizedValue
+      }
     }));
+
+    // Clear error for this field when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors = validateContactForm(formState.formData);
+    setErrors(newErrors);
+
+    return !hasFormErrors(newErrors);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage('');
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage('Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda segera!');
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        message: ''
+    // Reset previous states
+    setFormState(prev => ({
+      ...prev,
+      submitMessage: '',
+      submitStatus: 'idle'
+    }));
+
+    // Validate form
+    if (!validateForm()) {
+      return;
+    }
+
+    // Start submission
+    setFormState(prev => ({
+      ...prev,
+      isSubmitting: true,
+      submitStatus: 'idle'
+    }));
+
+    try {
+      // Format phone number
+      const formattedData = {
+        ...formState.formData,
+        phone: formatIndonesianPhone(formState.formData.phone)
+      };
+
+      // Here you would normally send the data to your backend
+      // For now, we'll simulate the API call
+      await simulateFormSubmission(formattedData);
+
+      // Success
+      setFormState({
+        formData: {
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          message: ''
+        },
+        isSubmitting: false,
+        submitMessage: 'Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda segera!',
+        submitStatus: 'success'
       });
-    }, 2000);
+
+      setErrors({});
+
+    } catch (error) {
+      // Error handling
+      setFormState(prev => ({
+        ...prev,
+        isSubmitting: false,
+        submitMessage: 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi atau hubungi kami langsung.',
+        submitStatus: 'error'
+      }));
+    }
+  };
+
+  // Simulate API call
+  const simulateFormSubmission = async (data: ContactFormData): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // Simulate 90% success rate
+        if (Math.random() > 0.1) {
+          resolve();
+        } else {
+          reject(new Error('Network error'));
+        }
+      }, 1500);
+    });
   };
 
   const contactInfo = [
@@ -244,7 +325,6 @@ export default function ContactPage() {
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <h2
               style={{
-                fontFamily: '"Plus Jakarta Sans", sans-serif',
                 fontSize: '36px',
                 fontWeight: '800',
                 lineHeight: '44px',
@@ -256,7 +336,6 @@ export default function ContactPage() {
             </h2>
             <p
               style={{
-                fontFamily: '"Plus Jakarta Sans", sans-serif',
                 fontSize: '18px',
                 color: 'rgb(156, 163, 175)',
                 maxWidth: '600px',
@@ -285,14 +364,16 @@ export default function ContactPage() {
                 <input
                   type="text"
                   name="name"
-                  value={formData.name}
+                  value={formState.formData.name}
                   onChange={handleInputChange}
                   required
                   style={{
                     width: '100%',
                     padding: '12px 16px',
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    border: errors.name
+                      ? '1px solid rgb(239, 68, 68)'
+                      : '1px solid rgba(255, 255, 255, 0.2)',
                     borderRadius: '8px',
                     color: 'rgb(255, 255, 255)',
                     fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -300,7 +381,22 @@ export default function ContactPage() {
                     transition: 'all 0.3s ease'
                   }}
                   placeholder="Masukkan nama lengkap Anda"
+                  aria-describedby={errors.name ? 'name-error' : undefined}
+                  aria-invalid={errors.name ? 'true' : 'false'}
                 />
+                {errors.name && (
+                  <div
+                    id="name-error"
+                    style={{
+                      color: 'rgb(239, 68, 68)',
+                      fontSize: '12px',
+                      marginTop: '4px',
+                      fontFamily: '"Plus Jakarta Sans", sans-serif'
+                    }}
+                  >
+                    {errors.name}
+                  </div>
+                )}
               </div>
 
               <div>
@@ -319,14 +415,16 @@ export default function ContactPage() {
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
+                  value={formState.formData.email}
                   onChange={handleInputChange}
                   required
                   style={{
                     width: '100%',
                     padding: '12px 16px',
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    border: errors.email
+                      ? '1px solid rgb(239, 68, 68)'
+                      : '1px solid rgba(255, 255, 255, 0.2)',
                     borderRadius: '8px',
                     color: 'rgb(255, 255, 255)',
                     fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -334,7 +432,22 @@ export default function ContactPage() {
                     transition: 'all 0.3s ease'
                   }}
                   placeholder="email@example.com"
+                  aria-describedby={errors.email ? 'email-error' : undefined}
+                  aria-invalid={errors.email ? 'true' : 'false'}
                 />
+                {errors.email && (
+                  <div
+                    id="email-error"
+                    style={{
+                      color: 'rgb(239, 68, 68)',
+                      fontSize: '12px',
+                      marginTop: '4px',
+                      fontFamily: '"Plus Jakarta Sans", sans-serif'
+                    }}
+                  >
+                    {errors.email}
+                  </div>
+                )}
               </div>
 
               <div>
@@ -353,7 +466,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   name="company"
-                  value={formData.company}
+                  value={formState.formData.company}
                   onChange={handleInputChange}
                   style={{
                     width: '100%',
@@ -386,13 +499,15 @@ export default function ContactPage() {
                 <input
                   type="tel"
                   name="phone"
-                  value={formData.phone}
+                  value={formState.formData.phone}
                   onChange={handleInputChange}
                   style={{
                     width: '100%',
                     padding: '12px 16px',
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    border: errors.phone
+                      ? '1px solid rgb(239, 68, 68)'
+                      : '1px solid rgba(255, 255, 255, 0.2)',
                     borderRadius: '8px',
                     color: 'rgb(255, 255, 255)',
                     fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -400,7 +515,22 @@ export default function ContactPage() {
                     transition: 'all 0.3s ease'
                   }}
                   placeholder="+62 8xx-xxxx-xxxx"
+                  aria-describedby={errors.phone ? 'phone-error' : undefined}
+                  aria-invalid={errors.phone ? 'true' : 'false'}
                 />
+                {errors.phone && (
+                  <div
+                    id="phone-error"
+                    style={{
+                      color: 'rgb(239, 68, 68)',
+                      fontSize: '12px',
+                      marginTop: '4px',
+                      fontFamily: '"Plus Jakarta Sans", sans-serif'
+                    }}
+                  >
+                    {errors.phone}
+                  </div>
+                )}
               </div>
 
               <div>
@@ -418,7 +548,7 @@ export default function ContactPage() {
                 </label>
                 <select
                   name="service"
-                  value={formData.service}
+                  value={formState.formData.service}
                   onChange={handleInputChange}
                   style={{
                     width: '100%',
@@ -455,7 +585,7 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   name="message"
-                  value={formData.message}
+                  value={formState.formData.message}
                   onChange={handleInputChange}
                   required
                   rows={6}
@@ -463,7 +593,9 @@ export default function ContactPage() {
                     width: '100%',
                     padding: '12px 16px',
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    border: errors.message
+                      ? '1px solid rgb(239, 68, 68)'
+                      : '1px solid rgba(255, 255, 255, 0.2)',
                     borderRadius: '8px',
                     color: 'rgb(255, 255, 255)',
                     fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -472,47 +604,70 @@ export default function ContactPage() {
                     transition: 'all 0.3s ease'
                   }}
                   placeholder="Jelaskan kebutuhan Anda..."
+                  aria-describedby={errors.message ? 'message-error' : undefined}
+                  aria-invalid={errors.message ? 'true' : 'false'}
                 />
+                {errors.message && (
+                  <div
+                    id="message-error"
+                    style={{
+                      color: 'rgb(239, 68, 68)',
+                      fontSize: '12px',
+                      marginTop: '4px',
+                      fontFamily: '"Plus Jakarta Sans", sans-serif'
+                    }}
+                  >
+                    {errors.message}
+                  </div>
+                )}
               </div>
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={formState.isSubmitting}
                 style={{
                   padding: '16px 40px',
-                  backgroundColor: isSubmitting ? 'rgb(107, 114, 128)' : 'rgb(95, 198, 124)',
+                  backgroundColor: formState.isSubmitting ? 'rgb(107, 114, 128)' : 'rgb(95, 198, 124)',
                   color: 'rgb(255, 255, 255)',
                   border: 'none',
                   borderRadius: '200px',
                   fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '18px',
                   fontWeight: '600',
-                  cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                  cursor: formState.isSubmitting ? 'not-allowed' : 'pointer',
                   transition: 'all 0.3s ease',
                   boxShadow: 'rgba(49, 54, 52, 0.32) -2px -2px 8px 0px inset'
                 }}
               >
-                {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
+                {formState.isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
               </button>
             </div>
 
-            {submitMessage && (
+            {formState.submitMessage && (
               <div
                 style={{
                   marginTop: '20px',
                   padding: '16px',
-                  backgroundColor: 'rgba(95, 198, 124, 0.1)',
-                  border: '1px solid rgb(95, 198, 124)',
+                  backgroundColor: formState.submitStatus === 'error'
+                    ? 'rgba(239, 68, 68, 0.1)'
+                    : 'rgba(95, 198, 124, 0.1)',
+                  border: formState.submitStatus === 'error'
+                    ? '1px solid rgb(239, 68, 68)'
+                    : '1px solid rgb(95, 198, 124)',
                   borderRadius: '8px',
                   textAlign: 'center',
-                  color: 'rgb(95, 198, 124)',
+                  color: formState.submitStatus === 'error'
+                    ? 'rgb(239, 68, 68)'
+                    : 'rgb(95, 198, 124)',
                   fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '16px'
                 }}
+                role={formState.submitStatus === 'error' ? 'alert' : 'status'}
+                aria-live="polite"
               >
-                {submitMessage}
+                {formState.submitMessage}
               </div>
             )}
           </form>
