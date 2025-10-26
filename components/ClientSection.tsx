@@ -1,27 +1,23 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function ClientSection() {
   const clientLogos = [
-    "https://nore.co.id/wp-content/uploads/2024/09/image-6.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-7.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-8.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-6-1.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-6-2.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-6-4.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-6-5.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-8-1.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-8-2.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-9.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-9-1.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-10.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-10-1.png",
-    "https://nore.co.id/wp-content/uploads/2024/09/image-11.png"
+    "/client/Logo-Kabupaten-Penajam-Paser-Utara-Kalimantan-Timur.png",
+    "/client/logo%20paser.png",
+    "/client/ofa%20royal.png"
+  ];
+
+  const clientNames = [
+    "Kabupaten Penajam Paser Utara",
+    "Paser",
+    "OFA Royal"
   ];
 
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [hoveredLogo, setHoveredLogo] = useState<number | null>(null);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -31,7 +27,7 @@ export default function ClientSection() {
     const slideWidth = 190; // Each slide is 190px wide
     const totalSlides = clientLogos.length * 3; // Original + duplicates for infinite scroll
     const maxPosition = -(clientLogos.length * slideWidth); // Reset after one full cycle
-    const animationSpeed = 15000; // 15 seconds for full animation (matching reference)
+    const animationSpeed = 12000; // 12 seconds for full animation
 
     const animate = () => {
       currentPosition -= slideWidth / (animationSpeed / 16.67); // ~60fps
@@ -68,13 +64,13 @@ export default function ClientSection() {
                   fontSize: '28px',
                   fontWeight: '700',
                   lineHeight: '37px',
-                  letterSpacing: '-0.4px',
+                  letterSpacing: '-0.2px',
                   color: 'rgb(255, 255, 255)',
                   textAlign: 'left',
                   margin: 0
                 }}
               >
-                Clients Trusted Us
+                Klien Percaya Kami
               </h2>
             </div>
 
@@ -83,16 +79,15 @@ export default function ClientSection() {
               <p
                 style={{
                   fontFamily: '"Plus Jakarta Sans", sans-serif',
-                  fontSize: '21px',
-                  fontWeight: '600',
-                  lineHeight: '30px',
-                  letterSpacing: '-0.1px',
+                  fontSize: '18px',
+                  fontWeight: '500',
+                  lineHeight: '28px',
                   color: 'rgb(229, 242, 239)',
                   margin: 0,
                   maxWidth: '100%'
                 }}
               >
-                We have produced and released hundreds of solutions including company profile websites, mobile apps, and sophisticated information systems which were built from scratch
+                Kami telah memproduksi dan merilis berbagai solusi digital termasuk website profil perusahaan, aplikasi mobile, dan sistem informasi yang canggih untuk mendukung transformasi digital klien kami
               </p>
             </div>
           </div>
@@ -102,10 +97,10 @@ export default function ClientSection() {
       {/* Full Width Logo Slider with Button */}
       <section style={{
         backgroundColor: 'rgb(49,54, 52)',
-        padding: '0 0 60px 0', // Add bottom padding for button
+        padding: '0 0 100px 0', // Add more bottom padding for better spacing
         position: 'relative',
         width: '100vw',
-        minHeight: '280px', // Increased height to accommodate button and margin
+        minHeight: '320px', // Increased height to accommodate button and margin
         overflow: 'hidden'
       }}>
         <div
@@ -132,8 +127,15 @@ export default function ClientSection() {
                 width: '190px',
                 height: '166px',
                 flexShrink: 0,
-                position: 'relative'
+                position: 'relative',
+                cursor: 'pointer',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                transform: hoveredLogo === index ? 'scale(1.05)' : 'scale(1)',
+                boxShadow: hoveredLogo === index ? '0 4px 20px rgba(95, 198, 124, 0.3)' : 'none'
               }}
+              onMouseEnter={() => setHoveredLogo(index)}
+              onMouseLeave={() => setHoveredLogo(null)}
             >
               <div
                 style={{
@@ -142,12 +144,13 @@ export default function ClientSection() {
                   width: '190px',
                   height: '166px',
                   boxSizing: 'border-box',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease'
                 }}
               >
                 <Image
                   src={logo}
-                  alt={`Client logo ${index + 1}`}
+                  alt={`${clientNames[index]} logo`}
                   width={160}
                   height={160}
                   style={{
@@ -158,9 +161,31 @@ export default function ClientSection() {
                     height: '160px',
                     maxWidth: '100%',
                     boxSizing: 'border-box',
-                    objectFit: 'contain'
+                    objectFit: 'contain',
+                    filter: hoveredLogo === index ? 'none' : 'grayscale(100%)',
+                    transition: 'filter 0.3s ease'
                   }}
                 />
+                {hoveredLogo === index && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '10px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                      color: 'white',
+                      padding: '4px 8px',
+                      borderRadius: '4px',
+                      fontSize: '12px',
+                      fontFamily: '"Plus Jakarta Sans", sans-serif',
+                      whiteSpace: 'nowrap',
+                      zIndex: 10
+                    }}
+                  >
+                    {clientNames[index]}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -175,8 +200,15 @@ export default function ClientSection() {
                 width: '190px',
                 height: '166px',
                 flexShrink: 0,
-                position: 'relative'
+                position: 'relative',
+                cursor: 'pointer',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                transform: hoveredLogo === (index + 100) ? 'scale(1.05)' : 'scale(1)',
+                boxShadow: hoveredLogo === (index + 100) ? '0 4px 20px rgba(95, 198, 124, 0.3)' : 'none'
               }}
+              onMouseEnter={() => setHoveredLogo(index + 100)}
+              onMouseLeave={() => setHoveredLogo(null)}
             >
               <div
                 style={{
@@ -185,12 +217,13 @@ export default function ClientSection() {
                   width: '190px',
                   height: '166px',
                   boxSizing: 'border-box',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease'
                 }}
               >
                 <Image
                   src={logo}
-                  alt={`Client logo ${index + 1} duplicate`}
+                  alt={`${clientNames[index]} logo duplicate`}
                   width={160}
                   height={160}
                   style={{
@@ -201,9 +234,31 @@ export default function ClientSection() {
                     height: '160px',
                     maxWidth: '100%',
                     boxSizing: 'border-box',
-                    objectFit: 'contain'
+                    objectFit: 'contain',
+                    filter: hoveredLogo === (index + 100) ? 'none' : 'grayscale(100%)',
+                    transition: 'filter 0.3s ease'
                   }}
                 />
+                {hoveredLogo === (index + 100) && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '10px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                      color: 'white',
+                      padding: '4px 8px',
+                      borderRadius: '4px',
+                      fontSize: '12px',
+                      fontFamily: '"Plus Jakarta Sans", sans-serif',
+                      whiteSpace: 'nowrap',
+                      zIndex: 10
+                    }}
+                  >
+                    {clientNames[index]}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -218,8 +273,15 @@ export default function ClientSection() {
                 width: '190px',
                 height: '166px',
                 flexShrink: 0,
-                position: 'relative'
+                position: 'relative',
+                cursor: 'pointer',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+                transform: hoveredLogo === (index + 200) ? 'scale(1.05)' : 'scale(1)',
+                boxShadow: hoveredLogo === (index + 200) ? '0 4px 20px rgba(95, 198, 124, 0.3)' : 'none'
               }}
+              onMouseEnter={() => setHoveredLogo(index + 200)}
+              onMouseLeave={() => setHoveredLogo(null)}
             >
               <div
                 style={{
@@ -228,12 +290,13 @@ export default function ClientSection() {
                   width: '190px',
                   height: '166px',
                   boxSizing: 'border-box',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease'
                 }}
               >
                 <Image
                   src={logo}
-                  alt={`Client logo ${index + 1} triplicate`}
+                  alt={`${clientNames[index]} logo triplicate`}
                   width={160}
                   height={160}
                   style={{
@@ -244,9 +307,31 @@ export default function ClientSection() {
                     height: '160px',
                     maxWidth: '100%',
                     boxSizing: 'border-box',
-                    objectFit: 'contain'
+                    objectFit: 'contain',
+                    filter: hoveredLogo === (index + 200) ? 'none' : 'grayscale(100%)',
+                    transition: 'filter 0.3s ease'
                   }}
                 />
+                {hoveredLogo === (index + 200) && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '10px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                      color: 'white',
+                      padding: '4px 8px',
+                      borderRadius: '4px',
+                      fontSize: '12px',
+                      fontFamily: '"Plus Jakarta Sans", sans-serif',
+                      whiteSpace: 'nowrap',
+                      zIndex: 10
+                    }}
+                  >
+                    {clientNames[index]}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -255,7 +340,7 @@ export default function ClientSection() {
         {/* See Our Portfolio Button - Bottom of Slider */}
         <div style={{
           position: 'absolute',
-          bottom: '50px',
+          bottom: '20px',
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 10,
@@ -264,12 +349,10 @@ export default function ClientSection() {
           width: '100%'
         }}>
           <a
-            href="https://nore.co.id/portofolio/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/portfolio"
             style={{
               display: 'inline-block',
-              padding: '18px 40px', // Increased padding for better appearance
+              padding: '16px 40px',
               border: '2px solid rgba(255, 255, 255, 0)',
               borderRadius: '200px',
               fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -285,10 +368,10 @@ export default function ClientSection() {
               transition: 'all 0.3s ease',
               position: 'relative',
               zIndex: 20,
-              margin: '10px 0' // Add vertical margin
+              margin: '10px 0'
             }}
           >
-            See Our Portfolio
+            Lihat Portfolio Kami
           </a>
         </div>
 

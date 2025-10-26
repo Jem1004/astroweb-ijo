@@ -26,32 +26,28 @@ export default function Header() {
         minHeight: '100px'
       }}
     >
-      <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6" style={{ margin: '0px 255px' }}>
+      <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
         {/* Logo */}
-        <div className="flex items-center justify-center" style={{ width: '116px', height: '64.5px' }}>
-          <a href="/" className="inline-block" style={{ width: '111px', height: '64px', display: 'block', textAlign: 'center' }}>
+        <div className="flex items-center">
+          <a href="/" className="inline-block">
             <Image
               src="/ASTRO.png"
               alt="Astro Digital Solution"
               width={111}
               height={64}
               className="w-auto h-16"
-              style={{ display: 'inline-block', overflow: 'clip', verticalAlign: 'middle' }}
             />
           </a>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-center flex-1" style={{ width: '812px', height: '64.5px' }}>
-          <div className="flex items-center justify-end" style={{ width: '568.398px', height: '56px', marginLeft: '134.125px' }}>
-            <div className="flex items-center space-x-0">
+        <nav className="hidden lg:flex items-center justify-center flex-1">
+          <div className="flex items-center justify-center space-x-8">
               <a
                 href="/"
-                className="relative font-semibold capitalize transition-all duration-400"
+                className="relative font-semibold capitalize transition-all duration-400 hover:text-green-400"
                 style={{
-                  width: '116.07px',
-                  height: '56px',
-                  padding: '13px 25px',
+                  padding: '13px 16px',
                   color: 'rgb(95, 198, 124)',
                   fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '15px',
@@ -66,12 +62,9 @@ export default function Header() {
               >
                 Beranda
                 <span
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-green-400 transition-all duration-300"
                   style={{
-                    width: '116.07px',
-                    height: '3px',
                     top: '53px',
-                    backgroundColor: 'rgb(95, 198, 124)',
                     opacity: hoveredItem === 'beranda' ? 1 : 0,
                     transition: '0.3s cubic-bezier(0.58, 0.3, 0.005, 1)'
                   }}
@@ -79,11 +72,9 @@ export default function Header() {
               </a>
               <a
                 href="/about"
-                className="relative font-semibold capitalize transition-all duration-400"
+                className="relative font-semibold capitalize transition-all duration-400 hover:text-green-400"
                 style={{
-                  width: '116.07px',
-                  height: '56px',
-                  padding: '13px 25px',
+                  padding: '13px 16px',
                   color: 'rgb(95, 198, 124)',
                   fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '15px',
@@ -98,12 +89,9 @@ export default function Header() {
               >
                 Tentang Kami
                 <span
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-green-400 transition-all duration-300"
                   style={{
-                    width: '116.07px',
-                    height: '3px',
                     top: '53px',
-                    backgroundColor: 'rgb(95, 198, 124)',
                     opacity: hoveredItem === 'about' ? 1 : 0,
                     transition: '0.3s cubic-bezier(0.58, 0.3, 0.005, 1)'
                   }}
@@ -111,11 +99,9 @@ export default function Header() {
               </a>
               <a
                 href="/services"
-                className="relative font-semibold capitalize transition-all duration-400"
+                className="relative font-semibold capitalize transition-all duration-400 hover:text-green-400"
                 style={{
-                  width: '104.516px',
-                  height: '56px',
-                  padding: '13px 25px',
+                  padding: '13px 16px',
                   color: 'rgb(95, 198, 124)',
                   fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '15px',
@@ -130,12 +116,9 @@ export default function Header() {
               >
                 Layanan
                 <span
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-green-400 transition-all duration-300"
                   style={{
-                    width: '104.516px',
-                    height: '3px',
                     top: '53px',
-                    backgroundColor: 'rgb(95, 198, 124)',
                     opacity: hoveredItem === 'services' ? 1 : 0,
                     transition: '0.3s cubic-bezier(0.58, 0.3, 0.005, 1)'
                   }}
@@ -143,11 +126,9 @@ export default function Header() {
               </a>
               <a
                 href="/portfolio"
-                className="relative font-semibold capitalize transition-all duration-400"
+                className="relative font-semibold capitalize transition-all duration-400 hover:text-green-400"
                 style={{
-                  width: '122.906px',
-                  height: '56px',
-                  padding: '13px 25px',
+                  padding: '13px 16px',
                   color: 'rgb(95, 198, 124)',
                   fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '15px',
@@ -162,24 +143,19 @@ export default function Header() {
               >
                 Portofolio
                 <span
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-green-400 transition-all duration-300"
                   style={{
-                    width: '122.906px',
-                    height: '3px',
                     top: '53px',
-                    backgroundColor: 'rgb(95, 198, 124)',
                     opacity: hoveredItem === 'portfolio' ? 1 : 0,
                     transition: '0.3s cubic-bezier(0.58, 0.3, 0.005, 1)'
                   }}
                 />
               </a>
               <a
-                href="/news"
-                className="relative font-semibold capitalize transition-all duration-400"
+                href="/contact"
+                className="relative font-semibold capitalize transition-all duration-400 hover:text-green-400"
                 style={{
-                  width: '90.7812px',
-                  height: '56px',
-                  padding: '13px 25px',
+                  padding: '13px 16px',
                   color: 'rgb(95, 198, 124)',
                   fontFamily: '"Plus Jakarta Sans", sans-serif',
                   fontSize: '15px',
@@ -189,38 +165,32 @@ export default function Header() {
                   display: 'flex',
                   alignItems: 'center'
                 }}
-                onMouseEnter={() => setHoveredItem('news')}
+                onMouseEnter={() => setHoveredItem('contact')}
                 onMouseLeave={() => setHoveredItem(null)}
               >
-                Berita
+                Contact
                 <span
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-300"
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-green-400 transition-all duration-300"
                   style={{
-                    width: '90.7812px',
-                    height: '3px',
                     top: '53px',
-                    backgroundColor: 'rgb(95, 198, 124)',
-                    opacity: hoveredItem === 'news' ? 1 : 0,
+                    opacity: hoveredItem === 'contact' ? 1 : 0,
                     transition: '0.3s cubic-bezier(0.58, 0.3, 0.005, 1)'
                   }}
                 />
               </a>
             </div>
-          </div>
         </nav>
 
 
 
         {/* Contact Button - Desktop */}
-        <div className="hidden lg:flex items-center justify-center" style={{ width: '225.594px', height: '44px', paddingLeft: '18px' }}>
+        <div className="hidden lg:flex items-center">
           <a
             href="https://api.whatsapp.com/send/?phone=6282158736885&text=Hello%20Astro%20Digital%20Solution,%20I%20would%20like%20to%20get%20in%20touch&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg"
             style={{
-              width: '144.875px',
-              height: '44px',
               padding: '12px 24px',
               border: 'none',
               borderRadius: '12px',
@@ -228,7 +198,6 @@ export default function Header() {
               fontSize: '14px',
               fontWeight: '600',
               lineHeight: '20px',
-              textAlign: 'center',
               color: '#ffffff',
               backgroundColor: 'rgb(95, 198, 124)',
               cursor: 'pointer',
@@ -348,7 +317,7 @@ export default function Header() {
                 whiteSpace: 'nowrap'
               }}
             >
-              Contact Us
+              Contact
             </a>
 
             {/* Mobile Contact Button */}

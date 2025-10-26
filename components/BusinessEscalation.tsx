@@ -28,8 +28,8 @@ export default function BusinessEscalation() {
           textAlign: 'center'
         }}>
           <Image
-            src="https://nore.co.id/wp-content/uploads/2024/09/image-14.png"
-            alt="Business Escalation"
+            src="/team.jpg"
+            alt="Business Escalation Team"
             width={855}
             height={481}
             style={{
@@ -37,7 +37,9 @@ export default function BusinessEscalation() {
               height: 'auto',
               maxWidth: '855px',
               display: 'inline-block',
-              verticalAlign: 'middle'
+              verticalAlign: 'middle',
+              objectFit: 'cover',
+              borderRadius: '16px'
             }}
           />
         </div>
